@@ -4,9 +4,9 @@ on:
   push:
     branches:
       - master
-#   create:
-#    tags:
-#       - v*
+  create:
+   tags:
+      - v*
 
 jobs:
   build:
