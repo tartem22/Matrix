@@ -1,0 +1,15 @@
+<map id="cpp.ast._GenericDeclaration" name="cpp.ast._GenericDeclaration">
+<area shape="rect" id="node1" title=" " alt="" coords="257,132,441,159"/>
+<area shape="rect" id="node4" href="$classcpp_1_1ast_1_1_class.html" title=" " alt="" coords="529,5,629,32"/>
+<area shape="rect" id="node6" href="$classcpp_1_1ast_1_1_function.html" title=" " alt="" coords="520,56,637,83"/>
+<area shape="rect" id="node8" href="$classcpp_1_1ast_1_1_type.html" title=" " alt="" coords="531,107,626,133"/>
+<area shape="rect" id="node9" href="$classcpp_1_1ast_1_1_typedef.html" title=" " alt="" coords="522,157,635,184"/>
+<area shape="rect" id="node10" href="$classcpp_1_1ast_1_1_variable_declaration.html" title=" " alt="" coords="489,208,668,235"/>
+<area shape="rect" id="node11" href="$classcpp_1_1ast_1_1___nested_type.html" title=" " alt="" coords="507,259,651,285"/>
+<area shape="rect" id="node2" href="$classcpp_1_1ast_1_1_node.html" title=" " alt="" coords="111,132,209,159"/>
+<area shape="rect" id="node3" title=" " alt="" coords="5,132,63,159"/>
+<area shape="rect" id="node5" href="$classcpp_1_1ast_1_1_struct.html" title=" " alt="" coords="720,5,823,32"/>
+<area shape="rect" id="node7" href="$classcpp_1_1ast_1_1_method.html" title=" " alt="" coords="716,56,827,83"/>
+<area shape="rect" id="node12" href="$classcpp_1_1ast_1_1_enum.html" title=" " alt="" coords="721,233,821,260"/>
+<area shape="rect" id="node13" href="$classcpp_1_1ast_1_1_union.html" title=" " alt="" coords="721,284,822,311"/>
+</map>
