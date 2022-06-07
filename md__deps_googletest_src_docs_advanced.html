@@ -77,12 +77,12 @@ Explicit Success and Failure</h2>
 <div class="fragment"><div class="line"> {c++}</div>
 <div class="line">SUCCEED();</div>
 </div><!-- fragment --><p >Generates a success. This does <b>NOT</b> make the overall test succeed. A test is considered successful only if none of its assertions fail during its execution.</p>
-<p >NOTE: <code><a class="el" href="___c_pack___packages_2_linux_2_d_e_b_2matrix-0_80_81-_linux_2usr_2include_2gtest_2gtest_8h.html#a75adcdf89f69b0b615e395daafc315af">SUCCEED()</a></code> is purely documentary and currently doesn't generate any user-visible output. However, we may add <code><a class="el" href="___c_pack___packages_2_linux_2_d_e_b_2matrix-0_80_81-_linux_2usr_2include_2gtest_2gtest_8h.html#a75adcdf89f69b0b615e395daafc315af">SUCCEED()</a></code> messages to googletest's output in the future.</p>
+<p >NOTE: <code><a class="el" href="___c_pack___packages_2_linux_2_d_e_b_2matrix-0_80_82-_linux_2usr_2include_2gtest_2gtest_8h.html#a75adcdf89f69b0b615e395daafc315af">SUCCEED()</a></code> is purely documentary and currently doesn't generate any user-visible output. However, we may add <code><a class="el" href="___c_pack___packages_2_linux_2_d_e_b_2matrix-0_80_82-_linux_2usr_2include_2gtest_2gtest_8h.html#a75adcdf89f69b0b615e395daafc315af">SUCCEED()</a></code> messages to googletest's output in the future.</p>
 <div class="fragment"><div class="line"> {c++}</div>
 <div class="line">FAIL();</div>
 <div class="line">ADD_FAILURE();</div>
 <div class="line">ADD_FAILURE_AT(&quot;file_path&quot;, line_number);</div>
-</div><!-- fragment --><p ><code><a class="el" href="___c_pack___packages_2_linux_2_d_e_b_2matrix-0_80_81-_linux_2usr_2include_2gtest_2gtest_8h.html#a3e26a8d27caa386ed0ea7ce9d5b7c4ed">FAIL()</a></code> generates a fatal failure, while <code><a class="el" href="___c_pack___packages_2_linux_2_d_e_b_2matrix-0_80_81-_linux_2usr_2include_2gtest_2gtest_8h.html#adc16b5b0a740c39084ea5c9e960e3063">ADD_FAILURE()</a></code> and <code><a class="el" href="___c_pack___packages_2_linux_2_d_e_b_2matrix-0_80_81-_linux_2usr_2include_2gtest_2gtest_8h.html#a448d7e5105b640e892fd8153fbee0b7f">ADD_FAILURE_AT()</a></code> generate a nonfatal failure. These are useful when control flow, rather than a Boolean expression, determines the test's success or failure. For example, you might want to write something like:</p>
+</div><!-- fragment --><p ><code><a class="el" href="___c_pack___packages_2_linux_2_d_e_b_2matrix-0_80_82-_linux_2usr_2include_2gtest_2gtest_8h.html#a3e26a8d27caa386ed0ea7ce9d5b7c4ed">FAIL()</a></code> generates a fatal failure, while <code><a class="el" href="___c_pack___packages_2_linux_2_d_e_b_2matrix-0_80_82-_linux_2usr_2include_2gtest_2gtest_8h.html#adc16b5b0a740c39084ea5c9e960e3063">ADD_FAILURE()</a></code> and <code><a class="el" href="___c_pack___packages_2_linux_2_d_e_b_2matrix-0_80_82-_linux_2usr_2include_2gtest_2gtest_8h.html#a448d7e5105b640e892fd8153fbee0b7f">ADD_FAILURE_AT()</a></code> generate a nonfatal failure. These are useful when control flow, rather than a Boolean expression, determines the test's success or failure. For example, you might want to write something like:</p>
 <div class="fragment"><div class="line"> {c++}</div>
 <div class="line">switch(expression) {</div>
 <div class="line">  case 1:</div>
@@ -92,7 +92,7 @@ Explicit Success and Failure</h2>
 <div class="line">  default:</div>
 <div class="line">     FAIL() &lt;&lt; &quot;We shouldn&#39;t get here.&quot;;</div>
 <div class="line">}</div>
-</div><!-- fragment --><p >NOTE: you can only use <code><a class="el" href="___c_pack___packages_2_linux_2_d_e_b_2matrix-0_80_81-_linux_2usr_2include_2gtest_2gtest_8h.html#a3e26a8d27caa386ed0ea7ce9d5b7c4ed">FAIL()</a></code> in functions that return <code>void</code>. See the Assertion Placement section for more information.</p>
+</div><!-- fragment --><p >NOTE: you can only use <code><a class="el" href="___c_pack___packages_2_linux_2_d_e_b_2matrix-0_80_82-_linux_2usr_2include_2gtest_2gtest_8h.html#a3e26a8d27caa386ed0ea7ce9d5b7c4ed">FAIL()</a></code> in functions that return <code>void</code>. See the Assertion Placement section for more information.</p>
 <h2><a class="anchor" id="autotoc_md27"></a>
 Exception Assertions</h2>
 <p >These are for verifying that a piece of code throws (or does not throw) an exception of the given type:</p>
@@ -117,7 +117,7 @@ Exception Assertions</h2>
 </div><!-- fragment --><p ><b>Availability</b>: requires exceptions to be enabled in the build environment</p>
 <h2><a class="anchor" id="autotoc_md28"></a>
 Predicate Assertions for Better Error Messages</h2>
-<p >Even though googletest has a rich set of assertions, they can never be complete, as it's impossible (nor a good idea) to anticipate all scenarios a user might run into. Therefore, sometimes a user has to use <code><a class="el" href="___c_pack___packages_2_linux_2_d_e_b_2matrix-0_80_81-_linux_2usr_2include_2gtest_2gtest_8h.html#ac33e7cdfb5d44a7a0f0ab552eb5c3c6a">EXPECT_TRUE()</a></code> to check a complex expression, for lack of a better macro. This has the problem of not showing you the values of the parts of the expression, making it hard to understand what went wrong. As a workaround, some users choose to construct the failure message by themselves, streaming it into <code><a class="el" href="___c_pack___packages_2_linux_2_d_e_b_2matrix-0_80_81-_linux_2usr_2include_2gtest_2gtest_8h.html#ac33e7cdfb5d44a7a0f0ab552eb5c3c6a">EXPECT_TRUE()</a></code>. However, this is awkward especially when the expression has side-effects or is expensive to evaluate.</p>
+<p >Even though googletest has a rich set of assertions, they can never be complete, as it's impossible (nor a good idea) to anticipate all scenarios a user might run into. Therefore, sometimes a user has to use <code><a class="el" href="___c_pack___packages_2_linux_2_d_e_b_2matrix-0_80_82-_linux_2usr_2include_2gtest_2gtest_8h.html#ac33e7cdfb5d44a7a0f0ab552eb5c3c6a">EXPECT_TRUE()</a></code> to check a complex expression, for lack of a better macro. This has the problem of not showing you the values of the parts of the expression, making it hard to understand what went wrong. As a workaround, some users choose to construct the failure message by themselves, streaming it into <code><a class="el" href="___c_pack___packages_2_linux_2_d_e_b_2matrix-0_80_82-_linux_2usr_2include_2gtest_2gtest_8h.html#ac33e7cdfb5d44a7a0f0ab552eb5c3c6a">EXPECT_TRUE()</a></code>. However, this is awkward especially when the expression has side-effects or is expensive to evaluate.</p>
 <p >googletest gives you three different options to solve this problem:</p>
 <h3><a class="anchor" id="autotoc_md29"></a>
 Using an Existing Boolean Function</h3>
@@ -174,7 +174,7 @@ Using a Function That Returns an AssertionResult</h3>
 <div class="line"> </div>
 <div class="line">}</div>
 </div><!-- fragment --><p >You can then use the <code>&lt;&lt;</code> operator to stream messages to the <code>AssertionResult</code> object.</p>
-<p >To provide more readable messages in Boolean assertions (e.g. <code><a class="el" href="___c_pack___packages_2_linux_2_d_e_b_2matrix-0_80_81-_linux_2usr_2include_2gtest_2gtest_8h.html#ac33e7cdfb5d44a7a0f0ab552eb5c3c6a">EXPECT_TRUE()</a></code>), write a predicate function that returns <code>AssertionResult</code> instead of <code>bool</code>. For example, if you define <code>IsEven()</code> as:</p>
+<p >To provide more readable messages in Boolean assertions (e.g. <code><a class="el" href="___c_pack___packages_2_linux_2_d_e_b_2matrix-0_80_82-_linux_2usr_2include_2gtest_2gtest_8h.html#ac33e7cdfb5d44a7a0f0ab552eb5c3c6a">EXPECT_TRUE()</a></code>), write a predicate function that returns <code>AssertionResult</code> instead of <code>bool</code>. For example, if you define <code>IsEven()</code> as:</p>
 <div class="fragment"><div class="line"> {c++}</div>
 <div class="line">testing::AssertionResult IsEven(int n) {</div>
 <div class="line">  if ((n % 2) == 0)</div>
@@ -231,7 +231,7 @@ Using a Predicate-Formatter</h3>
 <div class="line">                                             ...</div>
 <div class="line">                                             Tn valn);</div>
 </div><!-- fragment --><p >where <code>val1</code>, <code>val2</code>, ..., and <code>valn</code> are the values of the predicate arguments, and <code>expr1</code>, <code>expr2</code>, ..., and <code>exprn</code> are the corresponding expressions as they appear in the source code. The types <code>T1</code>, <code>T2</code>, ..., and <code>Tn</code> can be either value types or reference types. For example, if an argument has type <code>Foo</code>, you can declare it as either <code>Foo</code> or <code>const Foo&amp;</code>, whichever is appropriate.</p>
-<p >As an example, let's improve the failure message in <code>MutuallyPrime()</code>, which was used with <code><a class="el" href="___c_pack___packages_2_linux_2_d_e_b_2matrix-0_80_81-_linux_2usr_2include_2gtest_2gtest__pred__impl_8h.html#a14e74e655e502914d3d07e083145ac91">EXPECT_PRED2()</a></code>:</p>
+<p >As an example, let's improve the failure message in <code>MutuallyPrime()</code>, which was used with <code><a class="el" href="___c_pack___packages_2_linux_2_d_e_b_2matrix-0_80_82-_linux_2usr_2include_2gtest_2gtest__pred__impl_8h.html#a14e74e655e502914d3d07e083145ac91">EXPECT_PRED2()</a></code>:</p>
 <div class="fragment"><div class="line"> {c++}</div>
 <div class="line">// Returns the smallest prime common divisor of m and n,</div>
 <div class="line">// or 1 when m and n are mutually prime.</div>
@@ -304,7 +304,7 @@ Asserting Using gMock Matchers</h2>
 <h2><a class="anchor" id="autotoc_md36"></a>
 More String Assertions</h2>
 <p >(Please read the previous section first if you haven't.)</p>
-<p >You can use the gMock <a href="gmock_cheat_sheet.md#string-matchers">string matchers</a> with <code><a class="el" href="___c_pack___packages_2_linux_2_d_e_b_2matrix-0_80_81-_linux_2usr_2include_2gmock_2gmock-matchers_8h.html#ac31e206123aa702e1152bb2735b31409">EXPECT_THAT()</a></code> or <code><a class="el" href="___c_pack___packages_2_linux_2_d_e_b_2matrix-0_80_81-_linux_2usr_2include_2gmock_2gmock-matchers_8h.html#a41d888579850c16583baea33ee8d057e">ASSERT_THAT()</a></code> to do more string comparison tricks (sub-string, prefix, suffix, regular expression, and etc). For example,</p>
+<p >You can use the gMock <a href="gmock_cheat_sheet.md#string-matchers">string matchers</a> with <code><a class="el" href="___c_pack___packages_2_linux_2_d_e_b_2matrix-0_80_82-_linux_2usr_2include_2gmock_2gmock-matchers_8h.html#ac31e206123aa702e1152bb2735b31409">EXPECT_THAT()</a></code> or <code><a class="el" href="___c_pack___packages_2_linux_2_d_e_b_2matrix-0_80_82-_linux_2usr_2include_2gmock_2gmock-matchers_8h.html#a41d888579850c16583baea33ee8d057e">ASSERT_THAT()</a></code> to do more string comparison tricks (sub-string, prefix, suffix, regular expression, and etc). For example,</p>
 <div class="fragment"><div class="line"> {c++}</div>
 <div class="line">using ::testing::HasSubstr;</div>
 <div class="line">using ::testing::MatchesRegex;</div>
@@ -601,7 +601,7 @@ Death Test Styles</h2>
 <div class="line">}</div>
 </div><!-- fragment --><h2><a class="anchor" id="autotoc_md48"></a>
 Caveats</h2>
-<p >The <code>statement</code> argument of <code>ASSERT_EXIT()</code> can be any valid C++ statement. If it leaves the current function via a <code>return</code> statement or by throwing an exception, the death test is considered to have failed. Some googletest macros may return from the current function (e.g. <code><a class="el" href="___c_pack___packages_2_linux_2_d_e_b_2matrix-0_80_81-_linux_2usr_2include_2gtest_2gtest_8h.html#ae9244bfbda562e8b798789b001993fa5">ASSERT_TRUE()</a></code>), so be sure to avoid them in <code>statement</code>.</p>
+<p >The <code>statement</code> argument of <code>ASSERT_EXIT()</code> can be any valid C++ statement. If it leaves the current function via a <code>return</code> statement or by throwing an exception, the death test is considered to have failed. Some googletest macros may return from the current function (e.g. <code><a class="el" href="___c_pack___packages_2_linux_2_d_e_b_2matrix-0_80_82-_linux_2usr_2include_2gtest_2gtest_8h.html#ae9244bfbda562e8b798789b001993fa5">ASSERT_TRUE()</a></code>), so be sure to avoid them in <code>statement</code>.</p>
 <p >Since <code>statement</code> runs in the child process, any in-memory side effect (e.g. modifying a variable, releasing memory, etc) it causes will <em>not</em> be observable in the parent process. In particular, if you release memory in a death test, your program will fail the heap check as the parent process will never see the memory reclaimed. To solve this problem, you can</p>
 <ol type="1">
 <li>try not to free memory in a death test;</li>
@@ -735,7 +735,7 @@ Checking for Failures in the Current Test</h3>
 <div class="line">  // The following won&#39;t be executed.</div>
 <div class="line">  ...</div>
 <div class="line">}</div>
-</div><!-- fragment --><p >If <code>HasFatalFailure()</code> is used outside of <code><a class="el" href="___c_pack___packages_2_linux_2_d_e_b_2matrix-0_80_81-_linux_2usr_2include_2gtest_2gtest_8h.html#ab5540a6d621853916be8240ff51819cf">TEST()</a></code> , <code><a class="el" href="___c_pack___packages_2_linux_2_d_e_b_2matrix-0_80_81-_linux_2usr_2include_2gtest_2gtest_8h.html#a0ee66d464d1a06c20c1929cae09d8758">TEST_F()</a></code> , or a test fixture, you must add the <code><a class="el" href="classtesting_1_1_test.html">testing::Test</a>::</code> prefix, as in:</p>
+</div><!-- fragment --><p >If <code>HasFatalFailure()</code> is used outside of <code><a class="el" href="___c_pack___packages_2_linux_2_d_e_b_2matrix-0_80_82-_linux_2usr_2include_2gtest_2gtest_8h.html#ab5540a6d621853916be8240ff51819cf">TEST()</a></code> , <code><a class="el" href="___c_pack___packages_2_linux_2_d_e_b_2matrix-0_80_82-_linux_2usr_2include_2gtest_2gtest_8h.html#a0ee66d464d1a06c20c1929cae09d8758">TEST_F()</a></code> , or a test fixture, you must add the <code><a class="el" href="classtesting_1_1_test.html">testing::Test</a>::</code> prefix, as in:</p>
 <div class="fragment"><div class="line"> {c++}</div>
 <div class="line">if (testing::Test::HasFatalFailure()) return;</div>
 </div><!-- fragment --><p >Similarly, <code>HasNonfatalFailure()</code> returns <code>true</code> if the current test has at least one non-fatal failure, and <code>HasFailure()</code> returns <code>true</code> if the current test has at least one failure of either kind.</p>
@@ -827,10 +827,10 @@ Global Set-Up and Tear-Down</h1>
 </div><!-- fragment --><p >Then, you register an instance of your environment class with googletest by calling the <code><a class="el" href="namespacetesting.html#a224caeebdb6586b728d204367fea1087">testing::AddGlobalTestEnvironment()</a></code> function:</p>
 <div class="fragment"><div class="line"> {c++}</div>
 <div class="line">Environment* AddGlobalTestEnvironment(Environment* env);</div>
-</div><!-- fragment --><p >Now, when <code><a class="el" href="___c_pack___packages_2_linux_2_d_e_b_2matrix-0_80_81-_linux_2usr_2include_2gtest_2gtest_8h.html#a853a3792807489591d3d4a2f2ff9359f">RUN_ALL_TESTS()</a></code> is called, it first calls the <code>SetUp()</code> method of each environment object, then runs the tests if none of the environments reported fatal failures and <code><a class="el" href="___c_pack___packages_2_linux_2_d_e_b_2matrix-0_80_81-_linux_2usr_2include_2gtest_2gtest_8h.html#a3c0bbb980d533108ecc23c3534527d3c">GTEST_SKIP()</a></code> was not called. <code><a class="el" href="___c_pack___packages_2_linux_2_d_e_b_2matrix-0_80_81-_linux_2usr_2include_2gtest_2gtest_8h.html#a853a3792807489591d3d4a2f2ff9359f">RUN_ALL_TESTS()</a></code> always calls <code>TearDown()</code> with each environment object, regardless of whether or not the tests were run.</p>
+</div><!-- fragment --><p >Now, when <code><a class="el" href="___c_pack___packages_2_linux_2_d_e_b_2matrix-0_80_82-_linux_2usr_2include_2gtest_2gtest_8h.html#a853a3792807489591d3d4a2f2ff9359f">RUN_ALL_TESTS()</a></code> is called, it first calls the <code>SetUp()</code> method of each environment object, then runs the tests if none of the environments reported fatal failures and <code><a class="el" href="___c_pack___packages_2_linux_2_d_e_b_2matrix-0_80_82-_linux_2usr_2include_2gtest_2gtest_8h.html#a3c0bbb980d533108ecc23c3534527d3c">GTEST_SKIP()</a></code> was not called. <code><a class="el" href="___c_pack___packages_2_linux_2_d_e_b_2matrix-0_80_82-_linux_2usr_2include_2gtest_2gtest_8h.html#a853a3792807489591d3d4a2f2ff9359f">RUN_ALL_TESTS()</a></code> always calls <code>TearDown()</code> with each environment object, regardless of whether or not the tests were run.</p>
 <p >It's OK to register multiple environment objects. In this suite, their <code>SetUp()</code> will be called in the order they are registered, and their <code>TearDown()</code> will be called in the reverse order.</p>
 <p >Note that googletest takes ownership of the registered environment objects. Therefore <b>do not delete them</b> by yourself.</p>
-<p >You should call <code><a class="el" href="namespacetesting.html#a224caeebdb6586b728d204367fea1087">AddGlobalTestEnvironment()</a></code> before <code><a class="el" href="___c_pack___packages_2_linux_2_d_e_b_2matrix-0_80_81-_linux_2usr_2include_2gtest_2gtest_8h.html#a853a3792807489591d3d4a2f2ff9359f">RUN_ALL_TESTS()</a></code> is called, probably in <code><a class="el" href="namespacefuse__gmock__files.html#a64e8cd1ead5a1454265cbc2d3db4d425">main()</a></code>. If you use <code>gtest_main</code>, you need to call this before <code><a class="el" href="namespacefuse__gmock__files.html#a64e8cd1ead5a1454265cbc2d3db4d425">main()</a></code> starts for it to take effect. One way to do this is to define a global variable like this:</p>
+<p >You should call <code><a class="el" href="namespacetesting.html#a224caeebdb6586b728d204367fea1087">AddGlobalTestEnvironment()</a></code> before <code><a class="el" href="___c_pack___packages_2_linux_2_d_e_b_2matrix-0_80_82-_linux_2usr_2include_2gtest_2gtest_8h.html#a853a3792807489591d3d4a2f2ff9359f">RUN_ALL_TESTS()</a></code> is called, probably in <code><a class="el" href="namespacefuse__gmock__files.html#a64e8cd1ead5a1454265cbc2d3db4d425">main()</a></code>. If you use <code>gtest_main</code>, you need to call this before <code><a class="el" href="namespacefuse__gmock__files.html#a64e8cd1ead5a1454265cbc2d3db4d425">main()</a></code> starts for it to take effect. One way to do this is to define a global variable like this:</p>
 <div class="fragment"><div class="line"> {c++}</div>
 <div class="line">testing::Environment* const foo_env =</div>
 <div class="line">    testing::AddGlobalTestEnvironment(new FooEnvironment);</div>
@@ -932,10 +932,10 @@ Creating Value-Parameterized Abstract Tests</h2>
 <li>Put the definition of the parameterized test fixture class (e.g. <code><a class="el" href="class_foo_test.html">FooTest</a></code>) in a header file, say <code>foo_param_test.h</code>. Think of this as <em>declaring</em> your abstract tests.</li>
 <li>Put the <code>TEST_P</code> definitions in <code>foo_param_test.cc</code>, which includes <code>foo_param_test.h</code>. Think of this as <em>implementing</em> your abstract tests.</li>
 </ol>
-<p >Once they are defined, you can instantiate them by including <code>foo_param_test.h</code>, invoking <code><a class="el" href="___c_pack___packages_2_linux_2_d_e_b_2matrix-0_80_81-_linux_2usr_2include_2gtest_2gtest-param-test_8h.html#a6a5cb3ce0a0fe17f84f357a6f39a4ba5">INSTANTIATE_TEST_SUITE_P()</a></code>, and depending on the library target that contains <code>foo_param_test.cc</code>. You can instantiate the same abstract test suite multiple times, possibly in different source files.</p>
+<p >Once they are defined, you can instantiate them by including <code>foo_param_test.h</code>, invoking <code><a class="el" href="___c_pack___packages_2_linux_2_d_e_b_2matrix-0_80_82-_linux_2usr_2include_2gtest_2gtest-param-test_8h.html#a6a5cb3ce0a0fe17f84f357a6f39a4ba5">INSTANTIATE_TEST_SUITE_P()</a></code>, and depending on the library target that contains <code>foo_param_test.cc</code>. You can instantiate the same abstract test suite multiple times, possibly in different source files.</p>
 <h2><a class="anchor" id="autotoc_md61"></a>
 Specifying Names for Value-Parameterized Test Parameters</h2>
-<p >The optional last argument to <code><a class="el" href="___c_pack___packages_2_linux_2_d_e_b_2matrix-0_80_81-_linux_2usr_2include_2gtest_2gtest-param-test_8h.html#a6a5cb3ce0a0fe17f84f357a6f39a4ba5">INSTANTIATE_TEST_SUITE_P()</a></code> allows the user to specify a function or functor that generates custom test name suffixes based on the test parameters. The function should accept one argument of type <code><a class="el" href="structtesting_1_1_test_param_info.html">testing::TestParamInfo</a>&lt;class ParamType&gt;</code>, and return <code>std::string</code>.</p>
+<p >The optional last argument to <code><a class="el" href="___c_pack___packages_2_linux_2_d_e_b_2matrix-0_80_82-_linux_2usr_2include_2gtest_2gtest-param-test_8h.html#a6a5cb3ce0a0fe17f84f357a6f39a4ba5">INSTANTIATE_TEST_SUITE_P()</a></code> allows the user to specify a function or functor that generates custom test name suffixes based on the test parameters. The function should accept one argument of type <code><a class="el" href="structtesting_1_1_test_param_info.html">testing::TestParamInfo</a>&lt;class ParamType&gt;</code>, and return <code>std::string</code>.</p>
 <p ><code><a class="el" href="structtesting_1_1_print_to_string_param_name.html">testing::PrintToStringParamName</a></code> is a builtin test suffix generator that returns the value of <code>testing::PrintToString(GetParam())</code>. It does not work for <code>std::string</code> or C strings.</p>
 <p >NOTE: test names must be non-empty, unique, and may only contain ASCII alphanumeric characters. In particular, they <a href="faq.md#why-should-test-suite-names-and-test-names-not-contain-underscore">should not contain underscores</a></p>
 <div class="fragment"><div class="line"> {c++}</div>
@@ -987,7 +987,7 @@ Typed Tests</h1>
 <div class="line">using MyTypes = ::testing::Types&lt;char, int, unsigned int&gt;;</div>
 <div class="line">TYPED_TEST_SUITE(FooTest, MyTypes);</div>
 </div><!-- fragment --><p >The type alias (<code>using</code> or <code>typedef</code>) is necessary for the <code>TYPED_TEST_SUITE</code> macro to parse correctly. Otherwise the compiler will think that each comma in the type list introduces a new macro argument.</p>
-<p >Then, use <code><a class="el" href="___c_pack___packages_2_linux_2_d_e_b_2matrix-0_80_81-_linux_2usr_2include_2gtest_2gtest-typed-test_8h.html#ae6f575265873190de41b1329d16df0f0">TYPED_TEST()</a></code> instead of <code><a class="el" href="___c_pack___packages_2_linux_2_d_e_b_2matrix-0_80_81-_linux_2usr_2include_2gtest_2gtest_8h.html#a0ee66d464d1a06c20c1929cae09d8758">TEST_F()</a></code> to define a typed test for this test suite. You can repeat this as many times as you want:</p>
+<p >Then, use <code><a class="el" href="___c_pack___packages_2_linux_2_d_e_b_2matrix-0_80_82-_linux_2usr_2include_2gtest_2gtest-typed-test_8h.html#ae6f575265873190de41b1329d16df0f0">TYPED_TEST()</a></code> instead of <code><a class="el" href="___c_pack___packages_2_linux_2_d_e_b_2matrix-0_80_82-_linux_2usr_2include_2gtest_2gtest_8h.html#a0ee66d464d1a06c20c1929cae09d8758">TEST_F()</a></code> to define a typed test for this test suite. You can repeat this as many times as you want:</p>
 <div class="fragment"><div class="line"> {c++}</div>
 <div class="line">TYPED_TEST(FooTest, DoesBlah) {</div>
 <div class="line">  // Inside a test, refer to the special name TypeParam to get the type</div>
@@ -1022,7 +1022,7 @@ Type-Parameterized Tests</h1>
 </div><!-- fragment --><p >Next, declare that you will define a type-parameterized test suite:</p>
 <div class="fragment"><div class="line"> {c++}</div>
 <div class="line">TYPED_TEST_SUITE_P(FooTest);</div>
-</div><!-- fragment --><p >Then, use <code><a class="el" href="___c_pack___packages_2_linux_2_d_e_b_2matrix-0_80_81-_linux_2usr_2include_2gtest_2gtest-typed-test_8h.html#a6e9d1cd9b97da0076ae699775d3222d0">TYPED_TEST_P()</a></code> to define a type-parameterized test. You can repeat this as many times as you want:</p>
+</div><!-- fragment --><p >Then, use <code><a class="el" href="___c_pack___packages_2_linux_2_d_e_b_2matrix-0_80_82-_linux_2usr_2include_2gtest_2gtest-typed-test_8h.html#a6e9d1cd9b97da0076ae699775d3222d0">TYPED_TEST_P()</a></code> to define a type-parameterized test. You can repeat this as many times as you want:</p>
 <div class="fragment"><div class="line"> {c++}</div>
 <div class="line">TYPED_TEST_P(FooTest, DoesBlah) {</div>
 <div class="line">  // Inside a test, refer to TypeParam to get the type parameter.</div>
@@ -1111,7 +1111,7 @@ Registering tests programmatically</h1>
 <div class="line">                       const char* file, int line, Factory factory);</div>
 </div><!-- fragment --><p >The <code>factory</code> argument is a factory callable (move-constructible) object or function pointer that creates a new instance of the Test object. It handles ownership to the caller. The signature of the callable is <code>Fixture*()</code>, where <code><a class="el" href="class_fixture.html">Fixture</a></code> is the test fixture class for the test. All tests registered with the same <code>test_suite_name</code> must return the same fixture type. This is checked at runtime.</p>
 <p >The framework will infer the fixture class from the factory and will call the <code>SetUpTestSuite</code> and <code>TearDownTestSuite</code> for it.</p>
-<p >Must be called before <code><a class="el" href="___c_pack___packages_2_linux_2_d_e_b_2matrix-0_80_81-_linux_2usr_2include_2gtest_2gtest_8h.html#a853a3792807489591d3d4a2f2ff9359f">RUN_ALL_TESTS()</a></code> is invoked, otherwise behavior is undefined.</p>
+<p >Must be called before <code><a class="el" href="___c_pack___packages_2_linux_2_d_e_b_2matrix-0_80_82-_linux_2usr_2include_2gtest_2gtest_8h.html#a853a3792807489591d3d4a2f2ff9359f">RUN_ALL_TESTS()</a></code> is invoked, otherwise behavior is undefined.</p>
 <p >Use case example:</p>
 <div class="fragment"><div class="line"> {c++}</div>
 <div class="line">class MyFixture : public testing::Test {</div>
@@ -1217,7 +1217,7 @@ Defining Event Listeners</h2>
 <div class="line"> };</div>
 </div><!-- fragment --><h2><a class="anchor" id="autotoc_md70"></a>
 Using Event Listeners</h2>
-<p >To use the event listener you have defined, add an instance of it to the googletest event listener list (represented by class TestEventListeners - note the "s" at the end of the name) in your <code><a class="el" href="namespacefuse__gmock__files.html#a64e8cd1ead5a1454265cbc2d3db4d425">main()</a></code> function, before calling <code><a class="el" href="___c_pack___packages_2_linux_2_d_e_b_2matrix-0_80_81-_linux_2usr_2include_2gtest_2gtest_8h.html#a853a3792807489591d3d4a2f2ff9359f">RUN_ALL_TESTS()</a></code>:</p>
+<p >To use the event listener you have defined, add an instance of it to the googletest event listener list (represented by class TestEventListeners - note the "s" at the end of the name) in your <code><a class="el" href="namespacefuse__gmock__files.html#a64e8cd1ead5a1454265cbc2d3db4d425">main()</a></code> function, before calling <code><a class="el" href="___c_pack___packages_2_linux_2_d_e_b_2matrix-0_80_82-_linux_2usr_2include_2gtest_2gtest_8h.html#a853a3792807489591d3d4a2f2ff9359f">RUN_ALL_TESTS()</a></code>:</p>
 <div class="fragment"><div class="line"> {c++}</div>
 <div class="line">int main(int argc, char** argv) {</div>
 <div class="line">  testing::InitGoogleTest(&amp;argc, argv);</div>
@@ -1238,7 +1238,7 @@ Using Event Listeners</h2>
 <p >You may append more than one listener to the list. When an <code>On*Start()</code> or <code>OnTestPartResult()</code> event is fired, the listeners will receive it in the order they appear in the list (since new listeners are added to the end of the list, the default text printer and the default XML generator will receive the event first). An <code>On*End()</code> event will be received by the listeners in the <em>reverse</em> order. This allows output by listeners added later to be framed by output from listeners added earlier.</p>
 <h2><a class="anchor" id="autotoc_md71"></a>
 Generating Failures in Listeners</h2>
-<p >You may use failure-raising macros (<code>EXPECT_*()</code>, <code>ASSERT_*()</code>, <code><a class="el" href="___c_pack___packages_2_linux_2_d_e_b_2matrix-0_80_81-_linux_2usr_2include_2gtest_2gtest_8h.html#a3e26a8d27caa386ed0ea7ce9d5b7c4ed">FAIL()</a></code>, etc) when processing an event. There are some restrictions:</p>
+<p >You may use failure-raising macros (<code>EXPECT_*()</code>, <code>ASSERT_*()</code>, <code><a class="el" href="___c_pack___packages_2_linux_2_d_e_b_2matrix-0_80_82-_linux_2usr_2include_2gtest_2gtest_8h.html#a3e26a8d27caa386ed0ea7ce9d5b7c4ed">FAIL()</a></code>, etc) when processing an event. There are some restrictions:</p>
 <ol type="1">
 <li>You cannot generate any failure in <code>OnTestPartResult()</code> (otherwise it will cause <code>OnTestPartResult()</code> to be called recursively).</li>
 <li>A listener that handles <code>OnTestPartResult()</code> is not allowed to generate any failure.</li>
@@ -1247,7 +1247,7 @@ Generating Failures in Listeners</h2>
 <p >See <a href="../googletest/samples/sample10_unittest.cc" title="Failure-raising listener example">sample10_unittest.cc</a> for an example of a failure-raising listener.</p>
 <h1><a class="anchor" id="autotoc_md72"></a>
 Running Test Programs: Advanced Options</h1>
-<p >googletest test programs are ordinary executables. Once built, you can run them directly and affect their behavior via the following environment variables and/or command line flags. For the flags to work, your programs must call <code><a class="el" href="namespacetesting.html#afd726ae08c9bd16dc52f78c822d9946b">testing::InitGoogleTest()</a></code> before calling <code><a class="el" href="___c_pack___packages_2_linux_2_d_e_b_2matrix-0_80_81-_linux_2usr_2include_2gtest_2gtest_8h.html#a853a3792807489591d3d4a2f2ff9359f">RUN_ALL_TESTS()</a></code>.</p>
+<p >googletest test programs are ordinary executables. Once built, you can run them directly and affect their behavior via the following environment variables and/or command line flags. For the flags to work, your programs must call <code><a class="el" href="namespacetesting.html#afd726ae08c9bd16dc52f78c822d9946b">testing::InitGoogleTest()</a></code> before calling <code><a class="el" href="___c_pack___packages_2_linux_2_d_e_b_2matrix-0_80_82-_linux_2usr_2include_2gtest_2gtest_8h.html#a853a3792807489591d3d4a2f2ff9359f">RUN_ALL_TESTS()</a></code>.</p>
 <p >To see a list of supported flags and their usage, please run your test program with the <code>--help</code> flag. You can also use <code>-h</code>, <code>-?</code>, or <code>/?</code> for short.</p>
 <p >If an option is specified both by an environment variable and by a flag, the latter takes precedence.</p>
 <h2><a class="anchor" id="autotoc_md73"></a>
